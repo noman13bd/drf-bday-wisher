@@ -4,6 +4,7 @@
 
 
 PREREQUISITE:
+
     Make sure Redis is running on your localhost and post 6379. If redis is reachedable in `127.0.0.1:6379` then we dont need to change the value of this variable `CELERY_BROKER_URL` and `CELERY_RESULT_BACKEND` in `proj/settings.py`
 
     I'm using sqlite here. so no need for any external DB connection
