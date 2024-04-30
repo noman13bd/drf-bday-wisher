@@ -20,6 +20,7 @@ STEPS:
     4. now cd to project directory
     ```cd proj```
     5. run migration
+    ```python3 manage.py makemigration```
     ```python3 manage.py migrate```
     6. we need to open three terminal. one to run the api server, one to run celery worker and another to run celery beat
     7. in the first terminal; run ```python3 manage.py runserver```

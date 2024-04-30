@@ -1,5 +1,5 @@
 """
-URL configuration for bday_reminder project.
+URL configuration for customers project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
