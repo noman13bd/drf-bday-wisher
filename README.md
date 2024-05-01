@@ -7,6 +7,7 @@ Make sure Redis is running on your localhost and port 6379. If redis is reachabl
 I'm using sqlite as backend DB here. so no need for any external DB connection
 
 # STEPS:
+First clone project and then cd into the folder. Then follow the steps below:
 1. create virtual env using
     `python3 -m venv django_env`
 2. activate the virtual env
@@ -17,16 +18,16 @@ I'm using sqlite as backend DB here. so no need for any external DB connection
     `cd proj`
 5. run migration
     ```
-    `python3 manage.py makemigration`
-    `python3 manage.py migrate`
-    `python3 manage.py migrate django_celery_beat`
+    python3 manage.py makemigration
+    python3 manage.py migrate
+    python3 manage.py migrate django_celery_beat
     ```
 6. we need to open three terminal. one to run the api server, one to run celery worker and another to run celery beat
 7. in the first terminal; run 
     ```
-    `source django_env/bin/activate`
-    `cd proj`
-    `python3 manage.py runserver`
+    source django_env/bin/activate
+    cd proj
+    python3 manage.py runserver
     ```
 8. curl to post data
     ```
