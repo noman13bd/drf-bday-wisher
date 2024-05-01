@@ -4,6 +4,7 @@ from celery import shared_task
 from celery.schedules import crontab
 from .models import Customer
 from .serializers import CustomerSerializer
+from .utils import Utils
 import logging
 
 logger = logging.getLogger(__name__)
@@ -15,7 +16,13 @@ def send_bday_wish():
     bdays = Customer.objects.filter(bday__month=today.month, bday__day=today.day, notified=False)
     for bday in bdays:
         print(f"hello {bday.name}. Happy Birthday. Enjoy your day!")
-        # mail sending function will be called there
+        mail_sub = f"hello {bday.name}. Happy Birthday."
+        Utils.mail_send(
+            mail_to=bday.email,
+            mail_from="myemail@gmail.com",
+            mail_subject=mail_sub,
+            mail_body="Happy Birthday. Enjoy your day!"
+        )
         serializer = CustomerSerializer(bday, data={'notified': True}, partial=True)
         if serializer.is_valid():
             serializer.save()
