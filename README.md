@@ -47,13 +47,13 @@ First clone project and then cd into the folder. Then follow the steps below:
     ```
     source django_env/bin/activate
     cd proj
-    celery -A bday_reminder worker -l INFO
+    celery -A proj worker -l INFO
     ```
 11. then in the last terminal; run 
     ```
     source django_env/bin/activate
     cd proj
-    celery -A bday_reminder beat -l INFO
+    celery -A proj beat -l INFO
     ```
 job will be triggered on every 60 minutes. If any customers' birthday is on that day, it'll print a wish message in the console (this message will be displayed in the 2nd terminal where we ran the worker) and once this birthday message is displayed, it'll mark that customer is notified so that in next run it'll not send / display that message for the same customer.
 another job will be troggerd in every 2 hours which will check if there was any customers' birthday day was in the previous day and its nofied flag is true. then it'll mark the notified tag to false.
