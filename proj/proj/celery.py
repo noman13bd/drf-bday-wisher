@@ -12,7 +12,7 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'send_bday_wish': {
         'task': 'customers.tasks.send_bday_wish',
-        'schedule': crontab(minute='*/60')
+        'schedule': crontab(hour='*/2')
     },
     'update_bday_notified': {
         'task': 'customers.tasks.update_bday_wish',

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -52,8 +53,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CELERY_BROKER_URL='redis://127.0.0.1:6379/0'
-CELERY_RESULT_BACKEND='redis://127.0.0.1:6379/0'
+CELERY_BROKER_URL=os.getenv('CELERY_BROKER_URL')
+CELERY_RESULT_BACKEND=os.getenv('CELERY_RESULT_BACKEND')
 CELERY_IMPORTS = ('customers.tasks',)
 CELERY_TIMEZONE = 'Asia/Dhaka'
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
