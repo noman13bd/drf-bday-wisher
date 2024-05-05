@@ -1,6 +1,6 @@
 # drf-bday-wisher
 
-################################
+**Note**: Containerized version of this app is [located in this branch](https://github.com/noman13bd/drf-bday-wisher/tree/docker-master). You can follow the following steps or use the containerized version to run the app.
 
 # PREREQUISITE:
 Make sure Redis is running on your localhost and port 6379. If redis is reachable in `127.0.0.1:6379` then we dont need to change the value of this variable `CELERY_BROKER_URL` and `CELERY_RESULT_BACKEND` in `proj/settings.py`
