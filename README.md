@@ -7,7 +7,7 @@ First clone project and then cd into the folder. Then follow the steps below:
 1. build the container
     `docker compose build`
 2. run the services
-    `docker compose up` #provice `-d` if want to run in detached mode
+    `docker compose up` # provide `-d` if want to run in detached mode
 3. curl to post data
     ```
     curl --location 'http://127.0.0.1:8000/customers/api' \
